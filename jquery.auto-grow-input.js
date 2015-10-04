@@ -7,9 +7,11 @@
 */
 
 (function($){
+    var event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
+
     $.fn.autoGrowInput = function(options){
-        var o = $.extend({ maxWidth: 500, minWidth: 20, comfortZone: 0 }, options),
-            event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
+        var o = $.extend({ maxWidth: 500, minWidth: 20, comfortZone: 0 }, options);
+
         this.each(function(){
             var input = $(this),
                 minWidth = o.minWidth || input.width(),

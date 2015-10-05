@@ -14,7 +14,6 @@
 
         this.each(function(){
             var input = $(this),
-                minWidth = o.minWidth || input.width(),
                 val = ' ',
                 comfortZone = (options && 'comfortZone' in options) ? o.comfortZone : parseInt(input.css('fontSize')),
                 span = $('<span/>').css({

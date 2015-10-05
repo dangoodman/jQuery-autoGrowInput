@@ -27,7 +27,7 @@
                     letterSpacing: input.css('letterSpacing'),
                     whiteSpace: 'nowrap',
                     ariaHidden: true
-                }),
+                }).appendTo('body'),
                 check = function(e){
                     if (val === (val = input.val()) && !e.type == 'autogrow') return;
                     if (!val) val = input.attr('placeholder') || '';
@@ -37,7 +37,6 @@
                     else if (newWidth < o.minWidth) newWidth = o.minWidth;
                     if (newWidth != input.width()) input.width(newWidth);
                 };
-            span.insertAfter(input);
             input.on(event+'.autogrow autogrow', check);
             // init on page load
             check();
